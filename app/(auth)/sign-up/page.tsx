@@ -14,6 +14,7 @@ import FooterLink from "@/components/forms/FooterLink";
 import { signUpWithEmail } from "@/lib/actions/auth.actions";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import type { SignUpFormData } from "@/types/auth";
 
 const SignUp = () => {
   const router = useRouter();

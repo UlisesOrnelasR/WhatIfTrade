@@ -7,6 +7,7 @@ import FooterLink from "@/components/forms/FooterLink";
 import { signInWithEmail } from "@/lib/actions/auth.actions";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
+import type { SignInFormData } from "@/types/auth";
 
 const SignIn = () => {
   const router = useRouter();
