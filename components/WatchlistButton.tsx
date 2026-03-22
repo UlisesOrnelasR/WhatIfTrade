@@ -1,5 +1,6 @@
 "use client";
 import React, { useMemo, useState } from "react";
+import type { WatchlistButtonProps } from "@/types/watchlist";
 
 // Minimal WatchlistButton implementation to satisfy page requirements.
 // This component focuses on UI contract only. It toggles local state and

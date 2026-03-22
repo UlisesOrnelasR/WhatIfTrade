@@ -9,6 +9,7 @@ import type {
   MarketNewsArticle,
   RawNewsArticle,
 } from '@/types/market';
+import type { StockWithWatchlistStatus } from '@/types/watchlist';
 import { cache } from 'react';
 
 const FINNHUB_BASE_URL = 'https://finnhub.io/api/v1';
