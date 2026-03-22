@@ -147,6 +147,8 @@ NODEMAILER_EMAIL=
 NODEMAILER_PASSWORD=
 ```
 
+`BETTER_AUTH_SECRET` is still required for production. In localhost development only, the app now falls back to a fixed dev-only secret with a warning so `npm run dev` can boot without manual setup. If you want stable local auth across teammates or environments, generate your own value with `node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"` and paste it into your `.env`.
+
 Replace the placeholder values with your real credentials. You can get these by signing up at: [**MongoDB**](https://www.mongodb.com/products/platform/atlas-database), [**Gemini**](https://aistudio.google.com/prompts/new_chat?utm_source=chatgpt.com), [**Inngest**](https://jsm.dev/stocks-inggest), [**Finnhub**](https://finnhub.io).
 
 **Running the Project**

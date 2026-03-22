@@ -1,12 +1,11 @@
 import mongoose from "mongoose";
 import dns from "node:dns";
+import { env } from "@/lib/env";
 
 // Set DNS servers explicitly to resolve Atlas SRV records
 console.log("DNS Servers:", dns.getServers());
 dns.setServers(["1.1.1.1"]);
 console.log("DNS Servers:", dns.getServers());
-
-const MONGODB_URI = process.env.MONGODB_URI;
 
 declare global {
   var mongooseCache: {
@@ -22,12 +21,12 @@ if (!cached) {
 }
 
 export const connectToDatabase = async () => {
-  if (!MONGODB_URI) throw new Error("MONGODB_URI must be set within .env");
+  const mongodbUri = env.mongodbUri;
 
   if (cached.conn) return cached.conn;
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, { bufferCommands: false });
+    cached.promise = mongoose.connect(mongodbUri, { bufferCommands: false });
   }
 
   try {
@@ -37,7 +36,7 @@ export const connectToDatabase = async () => {
     throw err;
   }
 
-  console.log(`Connected to database ${process.env.NODE_ENV} - ${MONGODB_URI}`);
+  console.log(`Connected to database (${env.nodeEnv})`);
 
   return cached.conn;
 };
