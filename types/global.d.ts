@@ -69,18 +69,6 @@ declare global {
         isInWatchlist: boolean;
     };
 
-    type FinnhubSearchResult = {
-        symbol: string;
-        description: string;
-        displaySymbol?: string;
-        type: string;
-    };
-
-    type FinnhubSearchResponse = {
-        count: number;
-        result: FinnhubSearchResult[];
-    };
-
     type StockDetailsPageProps = {
         params: Promise<{
             symbol: string;
@@ -137,22 +125,6 @@ declare global {
         alertData: Alert[] | undefined;
     };
 
-    type MarketNewsArticle = {
-        id: number;
-        headline: string;
-        summary: string;
-        source: string;
-        url: string;
-        datetime: number;
-        category: string;
-        related: string;
-        image?: string;
-    };
-
-    type WatchlistNewsProps = {
-        news?: MarketNewsArticle[];
-    };
-
     type SearchCommandProps = {
         open?: boolean;
         setOpen?: (open: boolean) => void;
@@ -176,18 +148,6 @@ declare global {
         action?: string;
         open: boolean;
         setOpen: (open: boolean) => void;
-    };
-
-    type RawNewsArticle = {
-        id: number;
-        headline?: string;
-        summary?: string;
-        source?: string;
-        url?: string;
-        datetime?: number;
-        image?: string;
-        category?: string;
-        related?: string;
     };
 
     type Alert = {

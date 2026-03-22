@@ -5,6 +5,7 @@ import {getAllUsersForNewsEmail} from "@/lib/actions/user.actions";
 import { getWatchlistSymbolsByEmail } from "@/lib/actions/watchlist.actions";
 import { getNews } from "@/lib/actions/finnhub.actions";
 import { getFormattedTodayDate } from "@/lib/utils";
+import type { MarketNewsArticle } from "@/types/market";
 
 type UserForNewsEmail = Awaited<ReturnType<typeof getAllUsersForNewsEmail>>[number];
 
