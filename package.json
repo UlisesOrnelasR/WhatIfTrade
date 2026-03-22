@@ -6,7 +6,9 @@
     "dev": "node --require ./dns-fix.cjs ./node_modules/next/dist/bin/next dev --turbopack",
     "build": "node --require ./dns-fix.cjs ./node_modules/next/dist/bin/next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck"
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.10",
