@@ -1,6 +1,6 @@
+import StockHeatmapWidget from "@/components/StockHeatmapWidget";
 import TradingViewWidget from "@/components/TradingViewWidget";
 import {
-    HEATMAP_WIDGET_CONFIG,
     MARKET_DATA_WIDGET_CONFIG,
     MARKET_OVERVIEW_WIDGET_CONFIG,
     TOP_STORIES_WIDGET_CONFIG
@@ -22,12 +22,7 @@ const Home = () => {
                   />
               </div>
               <div className="md-col-span xl:col-span-2">
-                  <TradingViewWidget
-                      title="Stock Heatmap"
-                      scriptUrl={`${scriptUrl}stock-heatmap.js`}
-                      config={HEATMAP_WIDGET_CONFIG}
-                      height={600}
-                  />
+                  <StockHeatmapWidget />
               </div>
           </section>
             <section className="grid w-full gap-8 home-section">
