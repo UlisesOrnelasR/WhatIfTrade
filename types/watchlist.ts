@@ -16,3 +16,15 @@ export type WatchlistButtonProps = {
     type?: 'button' | 'icon';
     onWatchlistChange?: (symbol: string, isAdded: boolean) => void;
 };
+
+export type WatchlistMutationResult = {
+    success: boolean;
+    error?: string;
+};
+
+export type WatchlistListItem = {
+    userId: string;
+    symbol: string;
+    company: string;
+    addedAt: Date;
+};
